@@ -1,0 +1,144 @@
+{
+  "updatedAt": "2025-10-28T17:53:27.000Z",
+  "createdAt": "2025-10-27T18:47:10.427Z",
+  "id": "g4WTr2ZJnkEMnJCo",
+  "name": "Primer Flujo Sencillo",
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Newsletter Udia N8N",
+        "formDescription": "Las ultimas noticias de N8N en tu email",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Nombre",
+              "placeholder": "Aqui tu Nombre",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "placeholder": "Aqui tu email",
+              "requiredField": true
+            },
+            {
+              "fieldType": "html",
+              "html": "\n  <input type=\"checkbox\" required/>\n  Acepto la Politica de Privacidad\n\n\n"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c93e05b0-bc54-4629-a001-e774eb6fc4ba",
+      "name": "On form submission",
+      "webhookId": "0a6edd9e-c940-4e53-8b9f-a9ae4c1a965e"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "https://docs.google.com/spreadsheets/d/1QIetRo4UIiEi-QiMXiTrNeENaZYGgOSymZpaTY478cQ/edit?gid=0#gid=0",
+          "mode": "url"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1QIetRo4UIiEi-QiMXiTrNeENaZYGgOSymZpaTY478cQ/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Email": "={{ $json.Email }}",
+            "Nombre": "={{ $json.Nombre }}"
+          },
+          "matchingColumns": [
+            "Email"
+          ],
+          "schema": [
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "c259b727-05ad-4410-939e-8e09cb2641e1",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "VVxlBxVHhVfPTTVS",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {},
+  "versionId": "ebdb7efc-8834-4cfc-95ec-baff959c0390",
+  "triggerCount": 1,
+  "shared": [
+    {
+      "updatedAt": "2025-10-27T18:47:10.435Z",
+      "createdAt": "2025-10-27T18:47:10.435Z",
+      "role": "workflow:owner",
+      "workflowId": "g4WTr2ZJnkEMnJCo",
+      "projectId": "kbsnYJQSz9jlxwjy"
+    }
+  ],
+  "tags": []
+}
