@@ -1,1 +1,65 @@
-{}
+{
+  "updatedAt": "2025-11-10T18:44:16.000Z",
+  "createdAt": "2025-11-10T18:15:35.680Z",
+  "id": "MiSlCjZRm179XXrh",
+  "name": "My workflow",
+  "active": false,
+  "isArchived": true,
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "3651d293-6667-4138-bc41-f1e97befc0d8",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.wordpress",
+      "typeVersion": 1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "7a61e629-670b-4612-9f3b-3e141fd5f240",
+      "name": "Create a post"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create a post",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": null,
+  "pinData": {},
+  "versionId": "891c4789-b8cf-4837-8855-81f217325ceb",
+  "triggerCount": 0,
+  "shared": [
+    {
+      "updatedAt": "2025-11-10T18:15:35.693Z",
+      "createdAt": "2025-11-10T18:15:35.693Z",
+      "role": "workflow:owner",
+      "workflowId": "MiSlCjZRm179XXrh",
+      "projectId": "kbsnYJQSz9jlxwjy"
+    }
+  ],
+  "tags": []
+}
