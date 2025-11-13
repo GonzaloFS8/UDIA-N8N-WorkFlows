@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2025-11-13T17:59:08.000Z",
+  "updatedAt": "2025-11-13T18:04:52.000Z",
   "createdAt": "2025-11-12T18:40:24.604Z",
   "id": "IJasB81k984qop4s",
-  "name": "Backup workflows BUENO",
+  "name": "Backup workflowOKK",
   "active": false,
   "isArchived": false,
   "nodes": [
@@ -136,23 +136,6 @@
     },
     {
       "parameters": {
-        "operation": "toJson",
-        "mode": "each",
-        "options": {
-          "fileName": "={{ $json.name.replace(/\\s+/g, '').toLowerCase() }}{{ $json.id }}.json"
-        }
-      },
-      "type": "n8n-nodes-base.convertToFile",
-      "typeVersion": 1.1,
-      "position": [
-        -448,
-        -16
-      ],
-      "id": "7bd15a35-7717-4e66-9258-e84a13be800c",
-      "name": "Convert to File"
-    },
-    {
-      "parameters": {
         "options": {}
       },
       "type": "n8n-nodes-base.splitInBatches",
@@ -218,7 +201,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        -288,
+        -352,
         208
       ],
       "id": "92a8dec7-dcc6-4a2d-a93c-05883e732bcf",
@@ -365,11 +348,6 @@
         ]
       ]
     },
-    "Convert to File": {
-      "main": [
-        []
-      ]
-    },
     "Loop Over Items": {
       "main": [
         [
@@ -448,7 +426,7 @@
     "templateCredsSetupCompleted": true
   },
   "pinData": {},
-  "versionId": "11149300-d03f-4d48-b056-738fb38ff09c",
+  "versionId": "9d527b14-2357-41ea-a325-ec3e6f2f97a9",
   "triggerCount": 0,
   "shared": [
     {
